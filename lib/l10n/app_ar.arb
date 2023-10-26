@@ -1,0 +1,21 @@
+{
+  "sports": "رياضه",
+  "business": "اعمال",
+  "general": "عام",
+  "health": "صحه",
+  "science": "علوم",
+  "entertainment": "ترفيه",
+  "technology": "تكنولوجيا",
+  "newsapp": "الاخبار",
+  "settings": "الاعدادات",
+  "category": "فئات",
+  "theme": "الوضع",
+  "language": "اللغه",
+  "english": "انجليزي",
+  "arabic": "عربي",
+  "title": "اختر فئة اهتمامك",
+  "light": "فاتح",
+  "dark": "داكن"
+
+
+}
