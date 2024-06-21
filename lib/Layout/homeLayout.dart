@@ -41,9 +41,13 @@ class _HomeLayoutState extends State<HomeLayout> {
                 backgroundColor: primaryColor,
                   toolbarHeight: 70,
                   title: TextField(
+                    style: TextStyle(color: Colors.black),
                     controller: widget.search,
                     cursorColor: primaryColor,
                     decoration: InputDecoration(
+                      hintStyle:TextStyle(color: Colors.black) ,
+                        labelStyle:TextStyle(color: Colors.black) ,
+
                         filled: true,
                         hintText: "Search Article",
                         suffixIcon: IconButton(onPressed: () {

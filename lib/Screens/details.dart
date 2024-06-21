@@ -54,7 +54,6 @@ class NewsDetails extends StatelessWidget {
                   Row(children: [
                     Expanded(
                       child: Text(args.author ?? "",
-
                           style:
                               TextStyle(fontSize: 14, fontWeight: FontWeight.w400,color: Colors.purple)),
                     ),
