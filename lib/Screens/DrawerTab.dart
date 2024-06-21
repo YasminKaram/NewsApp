@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import '../Provider/MyProvider.dart';
+import '../Shared/style/Colors.dart';
 class DrawerTab extends StatelessWidget {
   Function onClick;
 
@@ -19,7 +20,7 @@ static int Sett_Id=2;
       child: Container(
         width: MediaQuery.of(context).size.width*.6,
         decoration: BoxDecoration(
-            color: pro.mode==ThemeMode.light?Colors.white:Colors.black,
+            color: pro.mode==ThemeMode.light?Colors.white70:Colors.black54,
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(12),
                 topRight: Radius.circular(12))),
@@ -29,8 +30,8 @@ static int Sett_Id=2;
               Container(
                 height:100 ,
                 width: double.infinity,
-                color: Colors.green,
-                child: Center(child: Text("News App")),
+                color:  primaryColor,
+                child: Center(child: Text(AppLocalizations.of(context)!.newsapp,style: TextStyle(color: Colors.white),)),
               ),
           InkWell(
             onTap: (){

@@ -13,13 +13,14 @@ class CategoryModel {
 
     static List<CategoryModel>getCatogegories(){
      return[
-       CategoryModel("Sports", "sports", "assets/images/sports.png", Colors.red),
-       CategoryModel("Business", "business", "assets/images/bussines.png", Color(0xff003E90)),
-       CategoryModel("Entertainment", "entertainment", "assets/images/environment.png", Colors.pink),
-       CategoryModel("General", "general", "assets/images/Politics.png", Colors.orange),
-       CategoryModel("Health", "health", "assets/images/health.png", Colors.blue),
-       CategoryModel("Science", "science", "assets/images/science.png", Colors.yellow),
-       CategoryModel("Technology", "technology", "assets/images/environment.png", Colors.green),
+       CategoryModel("Technology", "technology", "assets/images/technology.png",Color(0xff804aff)),
+       CategoryModel("Sports", "sports", "assets/images/sports.png", Color(0xff00CCC0)),
+       CategoryModel("Health", "health", "assets/images/health.png", Colors.pink),
+       CategoryModel("Business", "business", "assets/images/bussines.png", Color(0xffd4abf1)),
+       CategoryModel("Science", "science", "assets/images/science.png",Color(0xff0CABA8)),
+       CategoryModel("Entertainment", "entertainment", "assets/images/environment.png", Colors.deepOrange),
+       CategoryModel("General", "general", "assets/images/general.png",Colors.yellow),
+
 
      ];
   }

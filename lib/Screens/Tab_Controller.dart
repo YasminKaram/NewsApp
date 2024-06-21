@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Screens/NewsItem.dart';
 import 'package:news_app/Screens/SourceItem.dart';
+import 'package:news_app/Screens/home/Cubit/cubit.dart';
 import 'package:news_app/Shared/network/remote/Api_manager.dart';
 import 'package:provider/provider.dart';
 
 import '../Models/SourceResponse.dart';
 import '../Provider/MyProvider.dart';
 
-class Tab_Controller extends StatefulWidget {
-  List<Sources> sources;
+class Tab_Controller extends StatelessWidget {
   String txt;
 
-  Tab_Controller(this.sources,this.txt);
-
-  @override
-  State<Tab_Controller> createState() => _Tab_ControllerState();
-}
-
-class _Tab_ControllerState extends State<Tab_Controller> {
-  int selectedIndex = 0;
-
+  Tab_Controller(this.txt);
 
   @override
   Widget build(BuildContext context) {
@@ -27,40 +19,31 @@ class _Tab_ControllerState extends State<Tab_Controller> {
     return Column(
       children: [
         DefaultTabController(
-            length: widget.sources.length,
+            length: HomeCubit.get(context).sources.length,
             child: TabBar(
               onTap: (value) {
-                selectedIndex = value;
-                setState(() {
-
-                });
+                HomeCubit.get(context).changSource(value);
               },
-              indicatorColor:pro.mode==ThemeMode.light? Colors.transparent:Colors.black,
+              indicatorColor: pro.mode == ThemeMode.light
+                  ? Colors.transparent
+                  : Colors.black,
               isScrollable: true,
-              tabs: widget.sources
-                  .map((source) =>
-                  Tab(
+              tabs: HomeCubit.get(context)
+                  .sources
+                  .map((source) => Tab(
                       child: SourceItem(
-                          source, widget.sources.indexOf(source) == selectedIndex)
-                  ))
+                          source,
+                          HomeCubit.get(context).sources.indexOf(source) ==
+                              HomeCubit.get(context).selectedIndex)))
                   .toList(),
             )),
-        FutureBuilder(future: ApiManager.getNews(widget.sources[selectedIndex].id??"",widget.txt)
-            ,builder:(context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
-            }
-            if (snapshot.hasError) {
-              return Center(child: Text("some Thing went wrong"));
-            }
-            var newsList=snapshot.data?.articles??[];
-            return Expanded(
-              child: ListView.builder(itemBuilder:(context, index) {
-                return  NewsItem(newsList[index]);
-              },itemCount: newsList.length,),
-            );
-
-            },)
+        Expanded(
+          child: ListView.builder(
+              itemBuilder: (context, index) {
+                return NewsItem(HomeCubit.get(context).articals[index]);
+              },
+              itemCount: HomeCubit.get(context).articals.length),
+        )
       ],
     );
   }

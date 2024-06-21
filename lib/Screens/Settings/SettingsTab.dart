@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Provider/MyProvider.dart';
+import 'package:news_app/Shared/style/Colors.dart';
 import 'package:provider/provider.dart';
 
 import 'BottomSheets/ShowBottomSheetLanguage.dart';
@@ -33,9 +34,9 @@ class _SettingTabState extends State<SettingTab> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * .9,
                   decoration: BoxDecoration(
-                    color: pro.mode==ThemeMode.light?Colors.white:Colors.black,
+                    color: pro.mode==ThemeMode.light?Colors.white:Colors.black54,
 
-                      border: Border.all(color: Colors.green, width: 2),
+                      border: Border.all(color: light, width: 2),
                       borderRadius: BorderRadius.circular(12)),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -56,9 +57,9 @@ class _SettingTabState extends State<SettingTab> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * .9,
                   decoration: BoxDecoration(
-                    color: pro.mode==ThemeMode.light?Colors.white:Colors.black,
+                    color: pro.mode==ThemeMode.light?Colors.white:Colors.black54,
 
-                      border: Border.all(color: Colors.green, width: 2),
+                      border: Border.all(color:light, width: 2),
                       borderRadius: BorderRadius.circular(12)),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),

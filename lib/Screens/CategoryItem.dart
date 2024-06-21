@@ -18,8 +18,11 @@ class CategoryItem extends StatelessWidget {
         ),
 
         child: Column(children: [
-          Expanded(child: Image.asset(categoryModel.image)),
-          Text(categoryModel.name,style: TextStyle(color: Colors.white)),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(3.0),
+            child: Image.asset(categoryModel.image),
+          )),
+          Text(categoryModel.name,style: TextStyle(color: Colors.white,fontSize: 18)),
         ]),
       ),
     );

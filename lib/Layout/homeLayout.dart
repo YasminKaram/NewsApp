@@ -7,10 +7,11 @@ import 'package:news_app/Screens/Tab_Controller.dart';
 import 'package:news_app/Screens/categoriesTab.dart';
 import 'package:news_app/Shared/network/remote/Api_manager.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../Provider/MyProvider.dart';
 import '../Screens/NewsTab.dart';
 import '../Screens/Settings/SettingsTab.dart';
+import '../Shared/style/Colors.dart';
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "layout";
@@ -29,18 +30,19 @@ class _HomeLayoutState extends State<HomeLayout> {
     List<CategoryModel> category = CategoryModel.getCatogegories();
     return Container(
       decoration: BoxDecoration(
-          color: pro.mode==ThemeMode.light?Colors.white:Colors.black,
+          color: pro.mode==ThemeMode.light?Colors.white:darkPrimary,
           image: DecorationImage(
-              image: AssetImage("assets/images/pattern.png"),
+              image: AssetImage("assets/images/pattern.png"),opacity: 0.2,
               fit: BoxFit.fill)),
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar:
               widget.visable==true? AppBar(
+                backgroundColor: primaryColor,
                   toolbarHeight: 70,
                   title: TextField(
                     controller: widget.search,
-                    cursorColor: Colors.green,
+                    cursorColor: primaryColor,
                     decoration: InputDecoration(
                         filled: true,
                         hintText: "Search Article",
@@ -65,8 +67,9 @@ class _HomeLayoutState extends State<HomeLayout> {
                   )
               ) :
               AppBar(
+                backgroundColor:  primaryColor,
             toolbarHeight: 70,
-            title: Text(categoryModel?.name ?? "News App"),
+            title: Text(categoryModel?.name ?? AppLocalizations.of(context)!.newsapp),
             shape: OutlineInputBorder(
                 borderRadius: BorderRadius.only(
                     bottomRight: Radius.circular(18),
