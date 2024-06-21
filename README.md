@@ -1,6 +1,7 @@
 # news_app
 
 A new Flutter project.
+to provide quick access to a variety of information.
 
 ## Getting Started
 
