@@ -19,6 +19,6 @@ samples, guidance on mobile development, and a full API reference.
 | col 1      | col 2      |
 |------------|-------------|
 | ![screen1](assets/images/Screenshot_20240621_053824.jpg) |![screen2](assets/images/Screenshot_20240621_053827.jpg) |
-|![screen3](Screenshot_20240621_053831.jpg)|![screen4](Screenshot_20240621_053848.jpg)|
-|![screen4](Screenshot_20240621_053906.jpg)|    |
+| ![screen3](assets/images/Screenshot_20240621_053831.jpg)|![screen4](assets/images/Screenshot_20240621_053848.jpg)|
+|![screen4](assets/images/Screenshot_20240621_053906.jpg)|    |
 
